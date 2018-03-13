@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Blood4Life</string>
+    <string-array name="bloodgroup">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+    <string-array name="districts">
+        <item>Ernakulam</item>
+        <item>Idukki</item>
+    </string-array>
+    <string-array name="cities">
+        <item>Adimali</item>
+        <item>Aluva</item>
+        <item>Angamaly</item>
+        <item>Cheranallur</item>
+        <item>Edapally</item>
+        <item>Kakkanad</item>
+        <item>Kattapana</item>
+        <item>Kochi</item>
+        <item>Kolenchery</item>
+        <item>Koothattukulam</item>
+        <item>Kothamangalam</item>
+        <item>Kumily</item>
+        <item>Murickassery</item>
+        <item>Muvattupuzha</item>
+        <item>Nedumkandam</item>
+        <item>Paravur</item>
+        <item>Peermedu</item>
+        <item>Perumbavoor</item>
+        <item>Piravom</item>
+        <item>Thekkady</item>
+        <item>Thodupuzha</item>
+        <item>Thrippunithura</item>
+        <item>Udumbanchola</item>
+        <item>Vytilla</item>
+    </string-array>
+</resources>

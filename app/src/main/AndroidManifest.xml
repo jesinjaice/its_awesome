@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="myapp.jesin.com.blood4life">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:permission="a"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.parse.SERVER_URL"
+            android:value="https://parseapi.back4app.com/" />
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="TwV8gB3BTtBdFmFufQ6TnUxGAN1DJiQtpZNIe6sG" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="oxGwUov6RAbJ6kFJBtiGVlmIUQESs65p71f95Kfo" />
+
+        <activity android:name=".StartPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FrontPage" />
+        <activity
+            android:name=".LoginPage"
+            android:label="Login"
+            android:parentActivityName=".FrontPage" />
+        <activity
+            android:name=".SearchDonor"
+            android:label="Find a Donor"
+            android:parentActivityName=".FrontPage" />
+        <activity
+            android:name=".HelpPage"
+            android:label="Help"
+            android:parentActivityName=".SearchDonor" />
+        <activity
+            android:name=".Register"
+            android:label="Registration"
+            android:parentActivityName=".LoginPage" />
+        <activity
+            android:name=".Emergency"
+            android:label="Emergency" />
+        <activity
+            android:name=".PostEmergency"
+            android:label="Post an Emergency"
+            android:parentActivityName=".SearchDonor" />
+        <activity android:name=".Home"
+            android:label="Home"></activity>
+    </application>
+
+</manifest>

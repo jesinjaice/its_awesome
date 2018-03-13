@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="myapp.jesin.com.blood4life.Emergency">
+
+    <TextView
+        android:id="@+id/tbld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tunit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tbld"
+        android:layout_below="@+id/tbld"
+        android:layout_marginTop="11dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tcity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tunit"
+        android:layout_below="@+id/tunit"
+        android:layout_marginTop="11dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tdist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tcity"
+        android:layout_below="@+id/tcity"
+        android:layout_marginTop="12dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tdist"
+        android:layout_below="@+id/tdist"
+        android:layout_marginTop="15dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tname"
+        android:layout_below="@+id/tname"
+        android:layout_marginTop="15dp"
+        android:text="TextView" />
+</RelativeLayout>
