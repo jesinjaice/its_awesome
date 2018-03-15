@@ -14,7 +14,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="15sp"
         android:text="TextView" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tbld"
         android:layout_below="@+id/tbld"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="11sp"
         android:text="TextView" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/tunit"
         android:layout_below="@+id/tunit"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="11sp"
         android:text="TextView" />
 
     <TextView
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tcity"
         android:layout_below="@+id/tcity"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="12sp"
         android:text="TextView" />
 
     <TextView
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tdist"
         android:layout_below="@+id/tdist"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="15sp"
         android:text="TextView" />
 
     <TextView
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tname"
         android:layout_below="@+id/tname"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="15sp"
         android:text="TextView" />
 
     <TextView
@@ -71,5 +71,5 @@
         android:layout_toEndOf="@+id/tnum"
         android:text="UNDER DEVELOPMENT"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 </RelativeLayout>
