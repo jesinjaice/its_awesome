@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -54,8 +55,21 @@
             android:name=".PostEmergency"
             android:label="Post an Emergency"
             android:parentActivityName=".SearchDonor" />
-        <activity android:name=".Home"
-            android:label="Home"></activity>
+        <activity
+            android:name=".Home"
+            android:label="Home" />
+        <activity
+            android:name=".Display1Emerg"
+            android:label="Need for Blood" />
+        <activity
+            android:name=".ListofDonors"
+            android:label="List of Donors"
+            android:parentActivityName=".SearchDonor" />
+        <activity
+            android:name=".ProfileView"
+            android:label="Donor Profile" />
+        <activity android:name=".UpdateDetails"
+            android:label="Update"></activity>
     </application>
 
 </manifest>

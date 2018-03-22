@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="myapp.jesin.com.blood4life.ProfileView">
+
+    <Button
+        android:id="@+id/callbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="19dp"
+        android:text="Call Donor" />
+
+    <TextView
+        android:id="@+id/ndnmID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp" />
+
+    <TextView
+        android:id="@+id/ndbtID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ndnmID"
+        android:layout_below="@+id/ndnmID"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:id="@+id/ndctID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ndbtID"
+        android:layout_below="@+id/ndbtID"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:id="@+id/nddtID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ndctID"
+        android:layout_below="@+id/ndctID"
+        android:layout_marginTop="34dp" />
+
+    <TextView
+        android:id="@+id/ndmlID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/nddtID"
+        android:layout_below="@+id/nddtID"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:id="@+id/ndphID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ndmlID"
+        android:layout_below="@+id/ndmlID"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/ndstID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ndphID"
+        android:layout_below="@+id/ndphID"
+        android:layout_marginTop="27dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ndphID"
+        android:layout_alignBottom="@+id/ndphID"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="37dp"
+        android:text="Phone No." />
+</RelativeLayout>

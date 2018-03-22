@@ -12,8 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/logout"
-        android:layout_marginEnd="66dp"
-        android:layout_toStartOf="@+id/logout"
+        android:layout_centerHorizontal="true"
         android:text="Profile"
         android:textSize="25sp" />
 
@@ -27,14 +26,85 @@
         android:text="Logout" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/fnID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView19"
         android:layout_below="@+id/textView19"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="179dp"
-        android:text="UNDER DEVELOPMENT"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp" />
+        android:layout_marginTop="54dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/bldID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/fnID"
+        android:layout_below="@+id/fnID"
+        android:layout_marginTop="27dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/cityID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bldID"
+        android:layout_below="@+id/bldID"
+        android:layout_marginTop="31dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/distID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/cityID"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/mailID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/distID"
+        android:layout_below="@+id/distID"
+        android:layout_marginTop="36dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/numID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/mailID"
+        android:layout_below="@+id/mailID"
+        android:layout_marginTop="26dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/statID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/numID"
+        android:layout_below="@+id/numID"
+        android:layout_marginTop="28dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/editbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/logout"
+        android:layout_below="@+id/statID"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="23dp"
+        android:text="Edit/Update" />
+
+    <Button
+        android:id="@+id/ebtnID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fnID"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:text="EMErgencies"
+        android:textColor="@color/colorPrimaryDark"/>
 
 </RelativeLayout>

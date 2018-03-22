@@ -10,9 +10,12 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.parse.Parse;
+
 public class SearchDonor extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Button needhelp;
     Button emerg;
+    Button search;
     Spinner sblood;
     ArrayAdapter<CharSequence> adapter4;
     Spinner sdist;
@@ -41,7 +44,7 @@ public class SearchDonor extends AppCompatActivity implements AdapterView.OnItem
                                          startActivity(goemerg);
                                      }
                                  });
-                sblood = findViewById(R.id.blood);
+        sblood = findViewById(R.id.blood);
         adapter4 = ArrayAdapter.createFromResource(this, R.array.bloodgroup, android.R.layout.simple_spinner_item);
         adapter4.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         sblood.setAdapter(adapter4);
@@ -59,6 +62,23 @@ public class SearchDonor extends AppCompatActivity implements AdapterView.OnItem
         scity.setAdapter(adapter6);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         scity.setOnItemSelectedListener(this);
+
+
+
+        search=(Button)findViewById(R.id.searchbtn);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String sbld=sblood.getSelectedItem().toString();
+                String scit=scity.getSelectedItem().toString();
+                String sdis=sdist.getSelectedItem().toString();
+                Intent i=new Intent(SearchDonor.this,ListofDonors.class);
+                i.putExtra("bldtype",sbld);
+                i.putExtra("city",scit);
+                i.putExtra("district",sdis);
+                startActivity(i);
+            }
+        });
 
     }
 

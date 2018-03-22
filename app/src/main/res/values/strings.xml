@@ -11,8 +11,8 @@
         <item>O-</item>
     </string-array>
     <string-array name="districts">
-        <item>Ernakulam</item>
         <item>Idukki</item>
+        <item>Ernakulam</item>
     </string-array>
     <string-array name="cities">
         <item>Adimali</item>
@@ -39,5 +39,9 @@
         <item>Thrippunithura</item>
         <item>Udumbanchola</item>
         <item>Vytilla</item>
+    </string-array>
+    <string-array name="status">
+        <item>Available</item>
+        <item>Unavailable</item>
     </string-array>
 </resources>

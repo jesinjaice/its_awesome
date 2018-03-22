@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/searchbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/needhelp"
@@ -32,7 +32,7 @@
         android:id="@+id/blood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/button"
+        android:layout_alignEnd="@+id/searchbtn"
         android:layout_alignParentTop="true"
         android:layout_marginTop="18dp" />
 

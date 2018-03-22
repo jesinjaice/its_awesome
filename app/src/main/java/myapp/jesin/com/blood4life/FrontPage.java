@@ -34,6 +34,7 @@ public class FrontPage extends AppCompatActivity {
         final Button newsfeed;
         newsfeed=(Button)findViewById(R.id.newsfeed);
         newsfeed.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Intent news=new Intent(FrontPage.this,Emergency.class);

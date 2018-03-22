@@ -3,6 +3,7 @@ package myapp.jesin.com.blood4life;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,12 +16,14 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 public class LoginPage extends AppCompatActivity {
+    private static final String TAG="heello";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Button login;
         final EditText num,pwd;
 
@@ -32,7 +35,7 @@ public class LoginPage extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String lnum=num.getText().toString();
+                final String lnum=num.getText().toString();
                 final String lpwd=pwd.getText().toString();
 
 
@@ -45,9 +48,12 @@ public class LoginPage extends AppCompatActivity {
                    public void done(ParseObject object, ParseException e) {
 
                        if (e==null) {
+
                            Toast.makeText(LoginPage.this, "Welcome Donor", Toast.LENGTH_SHORT).show();
                            Intent intent=new Intent(LoginPage.this,Home.class);
-                           startActivity(intent);
+                           intent.putExtra("phno",lnum);
+                           Log.i(TAG,"hello"+lnum);
+                               startActivity(intent);
                        }
                        else
                            Toast.makeText(LoginPage.this,"Invalid Credentials",Toast.LENGTH_SHORT).show();
@@ -67,6 +73,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent reg=new Intent(LoginPage.this, Register.class);
+
                 startActivity(reg);
             }
         });

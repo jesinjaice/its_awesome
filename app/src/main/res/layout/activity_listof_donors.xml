@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="myapp.jesin.com.blood4life.Emergency">
+    tools:context="myapp.jesin.com.blood4life.ListofDonors">
 
     <ListView
-        android:id="@+id/elist"
+        android:id="@+id/dlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
