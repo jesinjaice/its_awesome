@@ -1,5 +1,6 @@
 package myapp.jesin.com.blood4life;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,27 +29,51 @@ public class Register extends AppCompatActivity implements OnItemSelectedListene
     ArrayAdapter<CharSequence> adapter3;
     Button reg;
     EditText name,num,mail,pass;
+    private Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        mContext = this;
+
         bloodspinner = findViewById(R.id.bloodgroup);
         adapter1 = ArrayAdapter.createFromResource(this, R.array.bloodgroup, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         bloodspinner.setAdapter(adapter1);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         bloodspinner.setOnItemSelectedListener(this);
         distspinner=findViewById(R.id.distdrop);
         adapter2=ArrayAdapter.createFromResource(this,R.array.districts,android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         distspinner.setAdapter(adapter2);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        distspinner.setOnItemSelectedListener(this);
+
         cityspinner=findViewById(R.id.citydrop);
-        adapter3=ArrayAdapter.createFromResource(this,R.array.cities,android.R.layout.simple_spinner_item);
+        adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_ernakulam,android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         cityspinner.setAdapter(adapter3);
+        distspinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) {
+                    adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_ernakulam,android.R.layout.simple_spinner_item);
+                    adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    cityspinner.setAdapter(adapter3);
+                } else {
+                    adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_idukki,android.R.layout.simple_spinner_item);
+                    adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    cityspinner.setAdapter(adapter3);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         cityspinner.setOnItemSelectedListener(this);
 

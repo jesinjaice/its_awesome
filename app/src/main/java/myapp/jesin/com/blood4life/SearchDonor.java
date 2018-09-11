@@ -1,5 +1,6 @@
 package myapp.jesin.com.blood4life;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,11 +23,15 @@ public class SearchDonor extends AppCompatActivity implements AdapterView.OnItem
     ArrayAdapter<CharSequence> adapter5;
     Spinner scity;
     ArrayAdapter<CharSequence> adapter6;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_donor);
+
+        mContext = this;
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         needhelp=(Button)findViewById(R.id.needhelp);
         needhelp.setOnClickListener(new View.OnClickListener() {
@@ -57,9 +62,31 @@ public class SearchDonor extends AppCompatActivity implements AdapterView.OnItem
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         sdist.setOnItemSelectedListener(this);
         scity=findViewById(R.id.city);
-        adapter6=ArrayAdapter.createFromResource(this,R.array.cities,android.R.layout.simple_spinner_item);
+      /*  adapter6=ArrayAdapter.createFromResource(this,R.array.cities,android.R.layout.simple_spinner_item);
+        adapter6.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        scity.setAdapter(adapter6);*/
+        adapter6=ArrayAdapter.createFromResource(mContext, R.array.cities_ernakulam,android.R.layout.simple_spinner_item);
         adapter6.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         scity.setAdapter(adapter6);
+        sdist.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) {
+                    adapter6=ArrayAdapter.createFromResource(mContext, R.array.cities_ernakulam,android.R.layout.simple_spinner_item);
+                    adapter6.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    scity.setAdapter(adapter6);
+                } else {
+                    adapter6=ArrayAdapter.createFromResource(mContext, R.array.cities_idukki,android.R.layout.simple_spinner_item);
+                    adapter6.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    scity.setAdapter(adapter6);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         scity.setOnItemSelectedListener(this);
 

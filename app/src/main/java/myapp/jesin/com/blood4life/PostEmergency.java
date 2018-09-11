@@ -1,5 +1,6 @@
 package myapp.jesin.com.blood4life;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,11 +25,15 @@ public class PostEmergency extends AppCompatActivity implements AdapterView.OnIt
     ArrayAdapter<CharSequence> adapter3;
     EditText ublood,cname,cnum;
     Button post;
+    private Context mContext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_emergency);
+
+        mContext = this;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         pblood = findViewById(R.id.postblood);
         adapter1 = ArrayAdapter.createFromResource(this, R.array.bloodgroup, android.R.layout.simple_spinner_item);
@@ -43,11 +48,29 @@ public class PostEmergency extends AppCompatActivity implements AdapterView.OnIt
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         pdist.setOnItemSelectedListener(this);
         pcity=findViewById(R.id.postcity);
-        adapter3=ArrayAdapter.createFromResource(this,R.array.cities,android.R.layout.simple_spinner_item);
+
+        adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_ernakulam,android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         pcity.setAdapter(adapter3);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        pcity.setOnItemSelectedListener(this);
+        pdist.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) {
+                    adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_ernakulam,android.R.layout.simple_spinner_item);
+                    adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    pcity.setAdapter(adapter3);
+                } else {
+                    adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_idukki,android.R.layout.simple_spinner_item);
+                    adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    pcity.setAdapter(adapter3);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         Parse.initialize(this);
 

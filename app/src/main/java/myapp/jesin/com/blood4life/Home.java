@@ -46,10 +46,6 @@ public class Home extends AppCompatActivity {
         });
 
 
-
-
-
-
         final String phno=getIntent().getStringExtra("phno");
         Log.i(TAG,"Sucessful"+phno);
 

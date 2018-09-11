@@ -1,5 +1,6 @@
 package myapp.jesin.com.blood4life;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,12 +33,14 @@ public class UpdateDetails extends AppCompatActivity implements AdapterView.OnIt
     Button upbtn;
     EditText mailET,pnET;
     String objid;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_details);
 
+        mContext = this;
 
         String phno=getIntent().getStringExtra("phno");
 
@@ -63,11 +66,28 @@ public class UpdateDetails extends AppCompatActivity implements AdapterView.OnIt
 
 
         cityspinner=findViewById(R.id.uctspID);
-        adapter3=ArrayAdapter.createFromResource(this,R.array.cities,android.R.layout.simple_spinner_item);
+        adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_ernakulam,android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         cityspinner.setAdapter(adapter3);
-        cityspinner.setOnItemSelectedListener(this);
+        distspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) {
+                    adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_ernakulam,android.R.layout.simple_spinner_item);
+                    adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    cityspinner.setAdapter(adapter3);
+                } else {
+                    adapter3=ArrayAdapter.createFromResource(mContext, R.array.cities_idukki,android.R.layout.simple_spinner_item);
+                    adapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    cityspinner.setAdapter(adapter3);
+                }
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         statspinner=findViewById(R.id.ustspID);
         adapter4=ArrayAdapter.createFromResource(this,R.array.status,android.R.layout.simple_spinner_item);
